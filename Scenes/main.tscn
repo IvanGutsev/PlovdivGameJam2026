@@ -14,9 +14,6 @@ script = ExtResource("1_21xkr")
 position = Vector2(389, -420)
 scale = Vector2(0.25, 0.25)
 
-[node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
-position = Vector2(28, -319)
-
 [node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
 position = Vector2(-103, -143)
 
@@ -31,5 +28,14 @@ limit_right = 919
 limit_bottom = 128
 
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
+
+[node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
+position = Vector2(28, -319)
+
+[node name="NPC2" parent="." unique_id=1525551826 instance=ExtResource("2_bo1nx")]
+position = Vector2(670, -572)
+
+[node name="NPC3" parent="." unique_id=1454447296 instance=ExtResource("2_bo1nx")]
+position = Vector2(423, -662)
 
 [connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]
