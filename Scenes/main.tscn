@@ -18,12 +18,17 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(28, -319)
 
 [node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
-position = Vector2(33, -47)
+position = Vector2(-103, -143)
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
+position = Vector2(802, 3)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
 zoom = Vector2(3, 3)
+limit_left = -139
+limit_top = -933
+limit_right = 919
+limit_bottom = 128
 
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
 

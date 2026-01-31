@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cykbdc2ddib8i" path="res://Assets/MapLayout.png" id="1_vk57k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfk5q"]
-size = Vector2(105, 4381)
+size = Vector2(82.75, 4161.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vk57k"]
-size = Vector2(4161, 150.25)
+size = Vector2(4181.5, 82.4375)
 
 [node name="Level1" type="StaticBody2D" unique_id=187266163]
 
@@ -14,17 +14,26 @@ size = Vector2(4161, 150.25)
 texture = ExtResource("1_vk57k")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1460196341]
-position = Vector2(-2049.5, -35.5)
+position = Vector2(-2049.375, -8.125)
 shape = SubResource("RectangleShape2D_xfk5q")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=407091029]
-position = Vector2(2063, 98)
+position = Vector2(2051.75, 15.75)
 shape = SubResource("RectangleShape2D_xfk5q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1394279422]
-position = Vector2(7.5, -2082.125)
+position = Vector2(7.5, -2063.7813)
 shape = SubResource("RectangleShape2D_vk57k")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=288776296]
-position = Vector2(8, 2084)
+position = Vector2(-2.25, 2068.4375)
 shape = SubResource("RectangleShape2D_vk57k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1548958870]
+polygon = PackedVector2Array(-1730, -2026, -1608, -1860, -1602, -1137, -1330, -1126, -1330, -603, -540, -798, -524, -520, -379, -509, -385, -1593, -941, -1593, -930, -1398, -546, -1393, -529, -937, -1185, -926, -1174, -1476, -1463, -1476, -1458, -1787, -1452, -1910, -1208, -2004)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1383176957]
+polygon = PackedVector2Array(1472, 1310, 1478, 1454, 1495, 1645, 442, 1640, 442, 2195, 227, 2166, 277, 1070, 434, 1075, 439, 1321)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=22188857]
+polygon = PackedVector2Array(2024, 987, 1456, 987, 1461, 61, 930, 55, 935, 1108, 792, 1114, 789, 979, -256, 974, -269, 1342, -404, 1339, -404, 821, -1057, 828, -1065, 455, -1340, 444, -1340, 118, -1074, 109, -1060, -531, -917, -533, -930, 487, -935, 565, -251, 576, -246, 103, 410, 86, 400, 447, -129, 442, -135, 676, 794, 676, 808, -341, 341, -344, 333, -663, 955, -660, 944, -275, 1600, -275, 1611, 648, 2106, 659)

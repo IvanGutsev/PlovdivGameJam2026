@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		if direction.y < 0:
 			animated_sprite.play("up");
+		if direction.y > 0:
+			animated_sprite.play("down");
 	else:
 		animated_sprite.play("idle");
 		
