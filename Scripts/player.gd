@@ -29,7 +29,8 @@ func _physics_process(delta: float) -> void:
 		
 	# check if there is movement and set the animation to "run"
 	if direction:
-		animated_sprite.play("run");
+		if direction.y < 0:
+			animated_sprite.play("up");
 	else:
 		animated_sprite.play("idle");
 		

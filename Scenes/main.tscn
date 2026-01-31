@@ -13,17 +13,17 @@ script = ExtResource("1_21xkr")
 [node name="Level1" parent="." unique_id=187266163 instance=ExtResource("1_kry3j")]
 position = Vector2(292, -272)
 
+[node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
+position = Vector2(45, -215)
+
+[node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
+position = Vector2(33, -47)
+
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
 zoom = Vector2(3, 3)
 
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
-
-[node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
-position = Vector2(45, -215)
-
-[node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
-position = Vector2(33, -47)
 
 [connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]
