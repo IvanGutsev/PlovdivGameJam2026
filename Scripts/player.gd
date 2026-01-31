@@ -61,5 +61,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_mask_take_mask() -> void:
-	state = MASKED;
+	Global.can_talk = true;
 	print("mask taken");

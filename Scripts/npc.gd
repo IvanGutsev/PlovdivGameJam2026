@@ -50,11 +50,12 @@ func _process(delta: float) -> void:
 			
 	if Input.is_action_pressed("interact"):
 		#check whether the player can talk to the npc (does he have a mask?)
-		print("chatting with npc");
-		$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
-		is_chatting = true;
-		is_roaming = false;
-		animated_sprite.play("idle");
+		if Global.can_talk:
+			print("chatting with npc");
+			$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
+			is_chatting = true;
+			is_roaming = false;
+			animated_sprite.play("idle");
 
 func choose(array):
 	array.shuffle();
