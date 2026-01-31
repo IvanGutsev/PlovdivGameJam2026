@@ -3,6 +3,12 @@ extends CharacterBody2D
 
 @export var speed = 5500.0;
 var direction : Vector2;
+var state = UNMASKED;
+
+enum {
+	UNMASKED,
+	MASKED
+}
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -34,6 +40,21 @@ func _physics_process(delta: float) -> void:
 	elif direction.x < 0:
 		animated_sprite.flip_h = true;
 		
+		
+	
+	#Manage state (masked and unmasked)
+	if Input.is_action_just_pressed("mask and unmask"):
+		## if you are unmasked and press the button to put on the mask
+		if state == UNMASKED:
+			state = MASKED;
+			speed = 10000;
+			print("Masked");
+		elif state == MASKED:
+			state = UNMASKED;
+			speed = 5500;
+			print("Unmasked");
+		
+	#if Input.is_action_just_pressed("mask and unmask")
 		
 	direction = direction.normalized();
 	velocity = direction * speed * delta;
