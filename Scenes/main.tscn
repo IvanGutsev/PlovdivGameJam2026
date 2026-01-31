@@ -1,14 +1,25 @@
 [gd_scene format=3 uid="uid://c6fu772o7gj20"]
 
+[ext_resource type="PackedScene" uid="uid://ctuclp31im6ms" path="res://Scenes/level_0.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=158342298]
 
+[node name="Level0" parent="." unique_id=705922176 instance=ExtResource("1_8gbba")]
+collision_layer = 3
+
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
+position = Vector2(-168, 163)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
+scale = Vector2(0.054443266, 1.0588691)
 zoom = Vector2(3, 3)
+limit_left = -193
+limit_top = -191
+limit_right = 193
+limit_bottom = 189
+position_smoothing_enabled = true
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
 position = Vector2(116, -58)
