@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://emfqptl31amd" path="res://Dialogue/dialogue_box.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dv5yvhciupxu5" path="res://Scenes/mask.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=158342298]
 
@@ -31,3 +32,8 @@ layout_mode = 2
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
 position = Vector2(116, -58)
+
+[node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
+position = Vector2(33, -47)
+
+[connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]

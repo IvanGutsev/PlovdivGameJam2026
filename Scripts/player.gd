@@ -59,3 +59,7 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized();
 	velocity = direction * speed * delta;
 	move_and_slide();
+
+
+func _on_mask_take_mask() -> void:
+	print("mask taken");
