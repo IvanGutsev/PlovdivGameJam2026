@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dv5yvhciupxu5" path="res://Scenes/mask.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dau4an3861pma" path="res://Scenes/next_level.tscn" id="7_6bp64"]
 
-[node name="Main" type="Node2D" unique_id=158342298]
+[node name="1" type="Node2D" unique_id=158342298]
 script = ExtResource("1_21xkr")
 
 [node name="Level1" parent="." unique_id=187266163 instance=ExtResource("1_kry3j")]
@@ -23,7 +24,16 @@ zoom = Vector2(3, 3)
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
 position = Vector2(45, -215)
 
+[node name="NPC2" parent="." unique_id=1525551826 instance=ExtResource("2_bo1nx")]
+position = Vector2(315, -444)
+
+[node name="NPC3" parent="." unique_id=226403768 instance=ExtResource("2_bo1nx")]
+position = Vector2(502, -416)
+
 [node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
-position = Vector2(33, -47)
+position = Vector2(501, -231)
+
+[node name="NextLevel" parent="." unique_id=1823105586 instance=ExtResource("7_6bp64")]
+position = Vector2(461, -556)
 
 [connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]

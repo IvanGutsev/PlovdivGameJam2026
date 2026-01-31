@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dau4an3861pma"]
+
+[ext_resource type="Script" uid="uid://ddgo1k004wgss" path="res://Scenes/next_level.gd" id="1_1piei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgq2k"]
+
+[node name="NextLevel" type="Area2D" unique_id=1823105586]
+script = ExtResource("1_1piei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404382334]
+shape = SubResource("RectangleShape2D_bgq2k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
