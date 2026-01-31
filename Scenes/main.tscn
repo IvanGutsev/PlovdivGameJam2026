@@ -21,7 +21,7 @@ zoom = Vector2(3, 3)
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
-position = Vector2(10, -100)
+position = Vector2(45, -215)
 
 [node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
 position = Vector2(33, -47)

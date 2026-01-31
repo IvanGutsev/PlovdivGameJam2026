@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://emfqptl31amd"]
 
 [ext_resource type="Script" uid="uid://bo8vrt841ioit" path="res://Scripts/dialogue_box.gd" id="1_e3xam"]
-[ext_resource type="Texture2D" uid="uid://b1uauctvj5vqb" path="res://Assets/inventory-background.png" id="1_lovb2"]
 
 [node name="DialogueBox" type="Control" unique_id=1232382886]
 layout_mode = 3
@@ -12,9 +11,10 @@ script = ExtResource("1_e3xam")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1392193886]
 layout_mode = 0
-offset_right = 305.0
-offset_bottom = 144.0
-texture = ExtResource("1_lovb2")
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 520.0
+offset_bottom = 129.0
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
@@ -28,14 +28,16 @@ offset_top = -6.0
 offset_right = 61.0
 offset_bottom = 18.0
 scale = Vector2(1.345, 1.345)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "name"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=698714824]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 19.0
-offset_right = 736.49994
-offset_bottom = 318.99997
+offset_right = 1248.9999
+offset_bottom = 261.49997
 scale = Vector2(0.4, 0.4)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "talking..."
