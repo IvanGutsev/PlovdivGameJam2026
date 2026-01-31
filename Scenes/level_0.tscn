@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://ctuclp31im6ms"]
-
-[ext_resource type="Texture2D" uid="uid://dn4cfyf4rl7b6" path="res://Assets/Level_Prototype.jpg" id="1_m0b12"]
-
-[node name="Level0" type="StaticBody2D" unique_id=1040540188]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=598554875]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_m0b12")

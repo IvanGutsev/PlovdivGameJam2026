@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://nqdnb6sw600a"]
+[gd_scene load_steps=7 format=3 uid="uid://nqdnb6sw600a"]
 
 [ext_resource type="Texture2D" uid="uid://bf6iuh2keqwtg" path="res://Assets/knight.png" id="1_acqhf"]
 [ext_resource type="Script" uid="uid://cu2wfvr53s2q7" path="res://Scripts/npc.gd" id="1_xxsvc"]
@@ -22,23 +22,23 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxsvc"]
 radius = 35.014282
 
-[node name="NPC" type="CharacterBody2D" unique_id=494707890]
+[node name="NPC" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_xxsvc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143388645]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b0k6i")
 animation = &"idle"
 
-[node name="chat_detection_area" type="Area2D" parent="." unique_id=295352954]
+[node name="chat_detection_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area" unique_id=658795190]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
 shape = SubResource("CircleShape2D_xxsvc")
 
-[node name="Timer" type="Timer" parent="." unique_id=1519149918]
+[node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Label" type="Label" parent="." unique_id=636765018]
+[node name="Label" type="Label" parent="."]
 offset_left = -35.0
 offset_top = -21.0
 offset_right = 35.0
@@ -46,7 +46,7 @@ offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
 text = "Press E to interact"
 
-[node name="DialogueBox" parent="." unique_id=1371953823 instance=ExtResource("3_g6unj")]
+[node name="DialogueBox" parent="." instance=ExtResource("3_g6unj")]
 offset_left = -48.0
 offset_top = -62.0
 offset_right = -8.0
