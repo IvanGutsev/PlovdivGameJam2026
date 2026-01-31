@@ -24,7 +24,6 @@ func start():
 	current_dialogue_id = -1;
 	next_script();
 	
-
 func load_dialogue():
 	var file = FileAccess.open("res://Dialogue/player_dialogue1.json", FileAccess.READ);
 	var content = JSON.parse_string(file.get_as_text());
@@ -38,9 +37,6 @@ func _input(event):
 
 func next_script():
 	current_dialogue_id += 1;
-	if (Global.currentDialogue == 2):
-		emit_signal("dialogue_finished");
-	
 	if current_dialogue_id >= len(dialogue):
 		dialogue_active = false;
 		nine_patch_rect.visible = false;
@@ -49,6 +45,7 @@ func next_script():
 		
 	name_text.text = dialogue[current_dialogue_id]['name'];
 	dialogue_text.text = dialogue[current_dialogue_id]['text'];
+	
 	
 	
 	
