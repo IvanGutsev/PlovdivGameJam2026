@@ -42,7 +42,7 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	player_in_chat_zone = true;
 	print("entered chat zone");
 	label.visible = true;
-	
+	process = true;
 	
 
 # player exited chat detection area
