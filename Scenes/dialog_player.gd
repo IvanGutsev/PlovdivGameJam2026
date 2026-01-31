@@ -12,7 +12,7 @@ var in_progress = false;
 func _ready() -> void:
 	background.visible = false;
 	scene_text = load_scene_text();
-	#SignalBus.display_dialog.connect(display_dialog)
+	SignalBus.display_dialog.emit("on_display_dialog")
 	
 
 
