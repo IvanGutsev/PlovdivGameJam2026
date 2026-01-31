@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://nqdnb6sw600a"]
+
+[ext_resource type="Texture2D" uid="uid://bf6iuh2keqwtg" path="res://Assets/knight.png" id="1_acqhf"]
+[ext_resource type="Script" uid="uid://cu2wfvr53s2q7" path="res://Scripts/npc.gd" id="1_xxsvc"]
+[ext_resource type="PackedScene" uid="uid://emfqptl31amd" path="res://Dialogue/dialogue_box.tscn" id="3_g6unj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
+atlas = ExtResource("1_acqhf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0k6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxsvc"]
+radius = 35.014282
+
+[node name="NPC" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_xxsvc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b0k6i")
+animation = &"idle"
+
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+shape = SubResource("CircleShape2D_xxsvc")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -35.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "Press E to interact"
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_g6unj")]
+offset_left = -48.0
+offset_top = -62.0
+offset_right = -8.0
+offset_bottom = -22.0
+
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogue_finished" from="DialogueBox" to="." method="_on_dialogue_box_dialogue_finished"]

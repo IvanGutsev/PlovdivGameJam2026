@@ -1,0 +1,40 @@
+extends CharacterBody2D
+
+
+@export var speed = 5500.0;
+var direction : Vector2;
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("up"):
+		direction.y = -1;
+	elif Input.is_action_pressed("down"):
+		direction.y = 1;	
+	else:
+		direction.y = 0;
+		
+	if Input.is_action_pressed("right"):
+		direction.x = 1;
+	elif Input.is_action_pressed("left"):
+		direction.x = -1;
+	else:
+		direction.x = 0;
+		
+	# check if there is movement and set the animation to "run"
+	if direction:
+		animated_sprite.play("run");
+	else:
+		animated_sprite.play("idle");
+		
+	# handle flipping the sprite as the direction changes
+	if direction.x > 0:
+		animated_sprite.flip_h = false;
+	elif direction.x < 0:
+		animated_sprite.flip_h = true;
+		
+		
+	direction = direction.normalized();
+	velocity = direction * speed * delta;
+	move_and_slide();
