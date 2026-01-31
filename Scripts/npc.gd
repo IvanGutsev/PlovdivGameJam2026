@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var label: Label = $Label
 
 var is_chatting = false;
-
+var process;
 
 var player;
 var player_in_chat_zone = false;
@@ -13,20 +13,24 @@ func _ready() -> void:
 	randomize();
 	label.visible = false;
 	
-func _process(delta: float) -> void:
+#func _process(delta: float) -> void:
 
-			
-	if Input.is_action_just_pressed("interact"):
-		#check whether the player can talk to the npc (does he have a mask?)
-		if Global.can_talk:
-			print("chatting with npc");
-			$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
-			is_chatting = true;
-			animated_sprite.play("idle");
-			$Barrier.disabled = true;
-		else:
-			print("YOU SHALL NOT PASS!!!!");
-			$Barrier.disabled = false;
+func _process(delta: float) -> void:
+	if process:
+		if Input.is_action_just_pressed("interact"):
+			print("interacting")
+			#check whether the player can talk to the npc (does he have a mask?)
+			if Global.can_talk:
+				print("chatting with npc");
+				$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
+				is_chatting = true;
+				animated_sprite.play("idle");
+				$Barrier.disabled = true;
+			else:
+				print("YOU SHALL NOT PASS!!!!");
+				$Barrier.disabled = false;
+				is_chatting = false;
+	
 
 func choose(array):
 	array.shuffle();
@@ -38,6 +42,8 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	player_in_chat_zone = true;
 	print("entered chat zone");
 	label.visible = true;
+	
+	
 
 # player exited chat detection area
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:

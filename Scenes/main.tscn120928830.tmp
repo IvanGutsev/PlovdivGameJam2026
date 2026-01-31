@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c6fu772o7gj20"]
+
+[ext_resource type="Script" uid="uid://c6ksuutanbq6s" path="res://Scenes/main.gd" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://deoe4m4qlfopx" path="res://Scenes/level_1.tscn" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dv5yvhciupxu5" path="res://Scenes/mask.tscn" id="4_jjvhh"]
+
+[node name="Main" type="Node2D" unique_id=158342298]
+script = ExtResource("1_21xkr")
+
+[node name="Level1" parent="." unique_id=187266163 instance=ExtResource("1_kry3j")]
+position = Vector2(292, -272)
+
+[node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
+
+[node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
+position = Vector2(45, -215)
+
+[node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
+position = Vector2(33, -47)
+
+[connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]
