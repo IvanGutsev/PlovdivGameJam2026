@@ -1,4 +1,14 @@
-[
-	{"name": "Player", "text": "Hello world"},
-	{"name": "NPC", "text": "placeholder text"}
-]
+{
+	"NPC1": [
+		"neshtosi",
+		"neshtosi..."
+	],
+	"NPC2": [
+		"neshtosi",
+		"neshtosi..."
+	],
+	"NPC3": [
+		"neshtosi",
+		"neshtosi...",
+	]
+}

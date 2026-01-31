@@ -55,6 +55,8 @@ func _physics_process(delta: float) -> void:
 			#state = UNMASKED;
 			#speed = 5500;
 			#print("Unmasked");
+			
+			
 		
 	#if Input.is_action_just_pressed("mask and unmask")
 		
