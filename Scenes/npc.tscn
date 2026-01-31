@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxsvc"]
 radius = 35.014282
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxsvc"]
+size = Vector2(45, 34)
+
 [node name="NPC" type="CharacterBody2D" unique_id=1525551826]
 collision_mask = 2
 script = ExtResource("1_xxsvc")
@@ -44,6 +47,11 @@ offset_right = 35.0
 offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
 text = "Press E to interact"
+
+[node name="Barrier" type="CollisionShape2D" parent="." unique_id=1704891081]
+visible = false
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_xxsvc")
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]

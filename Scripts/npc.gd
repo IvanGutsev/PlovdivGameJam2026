@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 			MOVE:
 				move(delta);
 			
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		#check whether the player can talk to the npc (does he have a mask?)
 		if Global.can_talk:
 			print("chatting with npc");
@@ -56,6 +56,9 @@ func _process(delta: float) -> void:
 			is_chatting = true;
 			is_roaming = false;
 			animated_sprite.play("idle");
+		else:
+			print("YOU SHALL NOT PASS!!!!");
+			$Barrier.visible = true;
 
 func choose(array):
 	array.shuffle();
