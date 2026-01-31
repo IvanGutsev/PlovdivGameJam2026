@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 			
 	if Input.is_action_pressed("interact"):
 		print("chatting with npc");
-		$DialogueBox.start();
+		$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
 		is_chatting = true;
 		is_roaming = false;
 		animated_sprite.play("idle");
