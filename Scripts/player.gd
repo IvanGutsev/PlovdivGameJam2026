@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var speed = 5500.0;
 var direction : Vector2;
 var state = UNMASKED;
@@ -42,17 +41,17 @@ func _physics_process(delta: float) -> void:
 		
 		
 	
-	#Manage state (masked and unmasked)
-	if Input.is_action_just_pressed("mask and unmask"):
-		## if you are unmasked and press the button to put on the mask
-		if state == UNMASKED:
-			state = MASKED;
-			speed = 10000;
-			print("Masked");
-		elif state == MASKED:
-			state = UNMASKED;
-			speed = 5500;
-			print("Unmasked");
+	##Manage state (masked and unmasked)
+	#if Input.is_action_just_pressed("mask and unmask"):
+		### if you are unmasked and press the button to put on the mask
+		#if state == UNMASKED:
+			#state = MASKED;
+			#speed = 10000;
+			#print("Masked");
+		#elif state == MASKED:
+			#state = UNMASKED;
+			#speed = 5500;
+			#print("Unmasked");
 		
 	#if Input.is_action_just_pressed("mask and unmask")
 		
@@ -62,4 +61,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_mask_take_mask() -> void:
+	state = MASKED;
 	print("mask taken");

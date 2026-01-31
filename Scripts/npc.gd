@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
 
@@ -50,6 +49,7 @@ func _process(delta: float) -> void:
 				move(delta);
 			
 	if Input.is_action_pressed("interact"):
+		#check whether the player can talk to the npc (does he have a mask?)
 		print("chatting with npc");
 		$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
 		is_chatting = true;
