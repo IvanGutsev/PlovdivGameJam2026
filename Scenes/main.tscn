@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://c6fu772o7gj20"]
 
 [ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://deoe4m4qlfopx" path="res://Scenes/level_1.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://emfqptl31amd" path="res://Dialogue/dialogue_box.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dv5yvhciupxu5" path="res://Scenes/mask.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=158342298]
+
+[node name="Level1" parent="." unique_id=187266163 instance=ExtResource("1_kry3j")]
+position = Vector2(292, -272)
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
 
