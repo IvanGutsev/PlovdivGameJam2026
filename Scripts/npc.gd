@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-signal interacting;
-signal finished_interacting;
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: Label = $Label
