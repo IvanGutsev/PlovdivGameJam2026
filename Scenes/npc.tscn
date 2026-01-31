@@ -49,7 +49,6 @@ theme_override_font_sizes/font_size = 8
 text = "Press E to interact"
 
 [node name="Barrier" type="CollisionShape2D" parent="." unique_id=1704891081]
-visible = false
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_xxsvc")
 
