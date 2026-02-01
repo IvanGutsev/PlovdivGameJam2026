@@ -8,16 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
 [ext_resource type="Script" uid="uid://dj06fk3bvt8ot" path="res://Scenes/area_2d.gd" id="4_344ge"]
 [ext_resource type="Texture2D" uid="uid://dit7qdabu06c1" path="res://angry mask.PNG" id="4_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://xsnqquoiin7r" path="res://Scenes/dialog_area.tscn" id="7_6bp64"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_344ge"]
-radius = 59.135437
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6bp64"]
-radius = 61.008198
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ynf5e"]
-radius = 65.00769
 
 [node name="Main" type="Node2D" unique_id=158342298]
 script = ExtResource("1_21xkr")
@@ -30,7 +20,7 @@ position = Vector2(389, -420)
 scale = Vector2(0.25, 0.25)
 
 [node name="Mask2" type="Area2D" parent="." unique_id=1194985808]
-position = Vector2(698, -119)
+position = Vector2(726, -353)
 script = ExtResource("4_344ge")
 
 [node name="AngryMask" type="Sprite2D" parent="Mask2" unique_id=1297903053]
@@ -44,7 +34,7 @@ texture = ExtResource("4_ynf5e")
 wait_time = 5.0
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
-position = Vector2(802, 3)
+position = Vector2(76, -22)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
 zoom = Vector2(3, 3)
@@ -56,7 +46,7 @@ limit_bottom = 128
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
-position = Vector2(690, -217)
+position = Vector2(25, -317)
 
 [node name="NPC2" parent="." unique_id=1525551826 instance=ExtResource("2_bo1nx")]
 position = Vector2(670, -572)
@@ -64,41 +54,16 @@ position = Vector2(670, -572)
 [node name="NPC3" parent="." unique_id=1454447296 instance=ExtResource("2_bo1nx")]
 position = Vector2(423, -662)
 
-[node name="DialogAreaNPC1" parent="." unique_id=1004058190 instance=ExtResource("7_6bp64")]
-position = Vector2(691, -214)
-dialog_key = "NPC1"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogAreaNPC1" unique_id=1114993346]
-shape = SubResource("CircleShape2D_344ge")
-
-[node name="DialogAreaNPC2" parent="." unique_id=1180971167 instance=ExtResource("7_6bp64")]
-position = Vector2(424, -659)
-dialog_key = "NPC2"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogAreaNPC2" unique_id=777018417]
-shape = SubResource("CircleShape2D_6bp64")
-
-[node name="DialogAreaNPC3" parent="." unique_id=1476432008 instance=ExtResource("7_6bp64")]
-position = Vector2(669, -568)
-dialog_key = "NPC3"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogAreaNPC3" unique_id=892307676]
-shape = SubResource("CircleShape2D_ynf5e")
-
 [node name="Labels" type="Node" parent="." unique_id=1186221454]
 
 [node name="NPC1" type="Label" parent="Labels" unique_id=68307488]
 visible = false
-offset_left = 710.0
-offset_top = -227.0
-offset_right = 891.0
-offset_bottom = -178.0
+offset_left = -15.0
+offset_top = -357.0
+offset_right = 166.0
+offset_bottom = -282.0
 scale = Vector2(0.5, 0.5)
-text = "WHO ARE YOU?!?!?
+text = "
 YOU SHALL NOT PASS!!!"
 
 [connection signal="timeout" from="Mask2/Timer" to="." method="mask_timer"]
-
-[editable path="DialogAreaNPC1"]
-[editable path="DialogAreaNPC2"]
-[editable path="DialogAreaNPC3"]
