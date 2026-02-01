@@ -79,6 +79,7 @@ func _physics_process(delta: float) -> void:
 
 func handle_mask_input():
 	if unlocked_masks.is_empty():
+		print("Mask array empty")
 		return # Requirement 1: Do nothing if no masks are picked up
 
 	# If no mask is active, start the carousel at the first unlocked mask
@@ -126,6 +127,7 @@ func _on_mask_timer_timeout():
 
 # Logic to pick up masks (Call this from your Pickup Area2D)
 func collect_mask(id: int):
+	print("Trying to collect mask")
 	if not unlocked_masks.has(id):
 		print("Enters here")
 		current_mask_index = 0

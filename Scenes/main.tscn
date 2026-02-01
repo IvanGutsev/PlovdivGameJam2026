@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://dj06fk3bvt8ot" path="res://Scenes/area_2d.gd" id="4_344ge"]
 [ext_resource type="Texture2D" uid="uid://dit7qdabu06c1" path="res://angry mask.PNG" id="4_ynf5e"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
+
 [node name="Main" type="Node2D" unique_id=158342298]
 script = ExtResource("1_21xkr")
 
@@ -21,6 +23,8 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Mask2" type="Area2D" parent="." unique_id=1194985808]
 position = Vector2(726, -353)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("4_344ge")
 
 [node name="AngryMask" type="Sprite2D" parent="Mask2" unique_id=1297903053]
@@ -29,12 +33,10 @@ scale = Vector2(0.04611384, 0.051072262)
 texture = ExtResource("4_ynf5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask2" unique_id=551378070]
-
-[node name="Timer" type="Timer" parent="Mask2" unique_id=448629036]
-wait_time = 5.0
+shape = SubResource("RectangleShape2D_344ge")
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
-position = Vector2(76, -22)
+position = Vector2(684, -320)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
 zoom = Vector2(3, 3)
@@ -44,6 +46,10 @@ limit_right = 919
 limit_bottom = 128
 
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
+
+[node name="MaskTimer" type="Timer" parent="Player" unique_id=802903387]
+wait_time = 5.0
+one_shot = true
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
 position = Vector2(25, -317)
@@ -66,4 +72,21 @@ scale = Vector2(0.5, 0.5)
 text = "
 YOU SHALL NOT PASS!!!"
 
-[connection signal="timeout" from="Mask2/Timer" to="." method="mask_timer"]
+[node name="Mask3" type="Area2D" parent="." unique_id=1761097529]
+position = Vector2(642, -358)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("4_344ge")
+mask_id = 2
+
+[node name="AngryMask" type="Sprite2D" parent="Mask3" unique_id=1875459991]
+position = Vector2(1, -1.0000021)
+scale = Vector2(0.04611384, 0.051072262)
+texture = ExtResource("4_ynf5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask3" unique_id=1160753946]
+shape = SubResource("RectangleShape2D_344ge")
+
+[connection signal="body_entered" from="Mask2" to="Mask2" method="_on_body_entered"]
+[connection signal="timeout" from="Player/MaskTimer" to="Player" method="_on_mask_timer_timeout"]
+[connection signal="body_entered" from="Mask3" to="Mask3" method="_on_body_entered"]
