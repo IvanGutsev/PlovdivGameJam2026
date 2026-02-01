@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bv4hk8evghfgl"]
+
+[ext_resource type="Script" uid="uid://ce3q8cyire24y" path="res://Scenes/shadow.gd" id="1_8pobm"]
+[ext_resource type="Texture2D" uid="uid://nd4rhraiw7ep" path="res://icon.svg" id="1_wjdoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8pobm"]
+radius = 62.008064
+
+[node name="Shadow" type="CharacterBody2D" unique_id=1484311997]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_8pobm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=137332477]
+texture = ExtResource("1_wjdoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664482015]
+shape = SubResource("CircleShape2D_8pobm")

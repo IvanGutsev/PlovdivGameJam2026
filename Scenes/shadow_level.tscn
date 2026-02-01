@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c5q2rj0vqfr7u"]
+
+[ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_67xjk"]
+[ext_resource type="PackedScene" uid="uid://bv4hk8evghfgl" path="res://Scenes/shadow.tscn" id="2_fksxs"]
+[ext_resource type="PackedScene" uid="uid://b2ai45dqkxgme" path="res://Scenes/obstacle(delete_later).tscn" id="3_sufkc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sufkc"]
+vertices = PackedVector2Array(766, 364, 1124.0781, 603.90625, 39.90625, 602.0781, 616, 364, 1113.8984, 43.078125, 766, 214, 233, 44.546875, 616, 214, 233, 164, 16.15625, 44.90625, 83, 44.796875, 83, 164)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(6, 4, 5, 7, 8), PackedInt32Array(2, 9, 10, 11), PackedInt32Array(3, 2, 11, 8, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-36, -5, -8, 652, 1175, 654, 1163, -7)])
+agent_radius = 50.0
+
+[node name="ShadowLevel" type="Node2D" unique_id=2046807542]
+
+[node name="Player" parent="." unique_id=1888137321 instance=ExtResource("1_67xjk")]
+position = Vector2(446, 360)
+
+[node name="Shadow" parent="." unique_id=1484311997 instance=ExtResource("2_fksxs")]
+position = Vector2(343, 104)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Shadow" unique_id=300099681]
+avoidance_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1503886579]
+navigation_polygon = SubResource("NavigationPolygon_sufkc")
+
+[node name="Obstacle(delete later)" parent="NavigationRegion2D" unique_id=1867095975 instance=ExtResource("3_sufkc")]
+position = Vector2(158, 89)
+
+[node name="Obstacle(delete later)2" parent="NavigationRegion2D" unique_id=1350081141 instance=ExtResource("3_sufkc")]
+position = Vector2(691, 289)
+
+[connection signal="velocity_computed" from="Shadow/NavigationAgent2D" to="Shadow" method="_on_navigation_agent_2d_velocity_computed"]

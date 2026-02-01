@@ -19,7 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxsvc"]
-radius = 35.014282
+radius = 62.03225
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxsvc"]
+size = Vector2(48, 24)
 
 [node name="NPC" type="CharacterBody2D" unique_id=1525551826]
 collision_mask = 2
@@ -40,7 +43,15 @@ offset_bottom = 2.0
 theme_override_font_sizes/font_size = 8
 text = "Press E to interact"
 
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1890208307]
 
-[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
-[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=538270253]
+shape = SubResource("CircleShape2D_xxsvc")
+
+[node name="Barrier" type="CollisionShape2D" parent="." unique_id=1354117006]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_xxsvc")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

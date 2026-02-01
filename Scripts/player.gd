@@ -77,6 +77,9 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed * delta;
 	move_and_slide();
 
+func player():
+	pass;
+
 func handle_mask_input():
 	if unlocked_masks.is_empty():
 		return # Requirement 1: Do nothing if no masks are picked up
