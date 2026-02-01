@@ -115,14 +115,17 @@ func apply_mask_effects(id: int):
 	match id:
 		1:
 			can_talk = true
+			speed = 5500
 		2:
 			can_dash = true
+			speed = 10000
 			
 func _on_mask_timer_timeout():
 	# Requirement: Remove mask after 5 seconds
 	current_mask_index = -1
 	can_talk = false
 	can_dash = false
+	speed = 5500
 	print("Mask expired. Abilities lost.")
 
 # Logic to pick up masks (Call this from your Pickup Area2D)
