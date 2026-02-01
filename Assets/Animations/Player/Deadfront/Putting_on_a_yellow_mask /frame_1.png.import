@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bun7mt8e80yju"
-path="res://.godot/imported/frame_1.png-7500b84a76b20e2ee51cccbefd988b2d.ctex"
+path="res://.godot/imported/frame_1.png-65ffe52972d5327f0c3da7d91ac137f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/Dead front/Putting on a yellow mask /frame_1.png"
-dest_files=["res://.godot/imported/frame_1.png-7500b84a76b20e2ee51cccbefd988b2d.ctex"]
+source_file="res://Assets/Animations/Player/Deadfront/Putting_on_a_yellow_mask /frame_1.png"
+dest_files=["res://.godot/imported/frame_1.png-65ffe52972d5327f0c3da7d91ac137f0.ctex"]
 
 [params]
 

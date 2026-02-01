@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qthg7kw360uk"
-path="res://.godot/imported/frame_7.png-9fdfdeae1c11410a98c76610eb7d2943.ctex"
+path="res://.godot/imported/frame_7.png-5c213b30f785b3cca94e09cc4776f947.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/NoMask/Walking back/frame_7.png"
-dest_files=["res://.godot/imported/frame_7.png-9fdfdeae1c11410a98c76610eb7d2943.ctex"]
+source_file="res://Assets/Animations/Player/NoMask/Walking_back/frame_7.png"
+dest_files=["res://.godot/imported/frame_7.png-5c213b30f785b3cca94e09cc4776f947.ctex"]
 
 [params]
 

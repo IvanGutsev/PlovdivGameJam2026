@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
 [ext_resource type="Script" uid="uid://dj06fk3bvt8ot" path="res://Scenes/area_2d.gd" id="4_344ge"]
 [ext_resource type="Texture2D" uid="uid://dit7qdabu06c1" path="res://angry mask.PNG" id="4_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://dtifc4f3a2ffh" path="res://neutral mask icon.png" id="5_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://c3j4bnhtdaugq" path="res://happy mask icon.png" id="10_hptm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 
@@ -22,7 +24,8 @@ position = Vector2(389, -420)
 scale = Vector2(0.25, 0.25)
 
 [node name="Mask2" type="Area2D" parent="." unique_id=1194985808]
-position = Vector2(726, -353)
+position = Vector2(688, -360)
+scale = Vector2(1.68, 1.56)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("4_344ge")
@@ -30,13 +33,13 @@ script = ExtResource("4_344ge")
 [node name="AngryMask" type="Sprite2D" parent="Mask2" unique_id=1297903053]
 position = Vector2(1, -1.0000021)
 scale = Vector2(0.04611384, 0.051072262)
-texture = ExtResource("4_ynf5e")
+texture = ExtResource("5_ynf5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask2" unique_id=551378070]
 shape = SubResource("RectangleShape2D_344ge")
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
-position = Vector2(684, -320)
+position = Vector2(-5, 7)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=414048392]
 zoom = Vector2(3, 3)
@@ -73,7 +76,7 @@ text = "
 YOU SHALL NOT PASS!!!"
 
 [node name="Mask3" type="Area2D" parent="." unique_id=1761097529]
-position = Vector2(642, -358)
+position = Vector2(520, -299)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("4_344ge")
@@ -87,6 +90,22 @@ texture = ExtResource("4_ynf5e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask3" unique_id=1160753946]
 shape = SubResource("RectangleShape2D_344ge")
 
+[node name="Mask4" type="Area2D" parent="." unique_id=1024584239]
+position = Vector2(503, -606)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("4_344ge")
+mask_id = 2
+
+[node name="AngryMask" type="Sprite2D" parent="Mask4" unique_id=1511262536]
+position = Vector2(1, -1.0000021)
+scale = Vector2(0.04611384, 0.051072262)
+texture = ExtResource("10_hptm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask4" unique_id=770336815]
+shape = SubResource("RectangleShape2D_344ge")
+
 [connection signal="body_entered" from="Mask2" to="Mask2" method="_on_body_entered"]
 [connection signal="timeout" from="Player/MaskTimer" to="Player" method="_on_mask_timer_timeout"]
 [connection signal="body_entered" from="Mask3" to="Mask3" method="_on_body_entered"]
+[connection signal="body_entered" from="Mask4" to="Mask4" method="_on_body_entered"]

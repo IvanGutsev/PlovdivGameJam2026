@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0sa5hwbo1g48"
-path="res://.godot/imported/frame_1.png-32cb80f1cb1b344f520c110a74b65320.ctex"
+path="res://.godot/imported/frame_1.png-19106627e06c66b1ca44cb1f5180a6d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/Dead front/frame_1.png"
-dest_files=["res://.godot/imported/frame_1.png-32cb80f1cb1b344f520c110a74b65320.ctex"]
+source_file="res://Assets/Animations/Player/Deadfront/frame_1.png"
+dest_files=["res://.godot/imported/frame_1.png-19106627e06c66b1ca44cb1f5180a6d9.ctex"]
 
 [params]
 

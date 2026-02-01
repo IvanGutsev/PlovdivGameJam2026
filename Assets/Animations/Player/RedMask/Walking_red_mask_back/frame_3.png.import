@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://capcx6ywupi46"
-path="res://.godot/imported/frame_3.png-446358a1a1ae4c6c0007fc6c64f51f9d.ctex"
+path="res://.godot/imported/frame_3.png-9ca93277d1d794431953ad4153d3b829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/RedMask/Walking red mask back/frame_3.png"
-dest_files=["res://.godot/imported/frame_3.png-446358a1a1ae4c6c0007fc6c64f51f9d.ctex"]
+source_file="res://Assets/Animations/Player/RedMask/Walking_red_mask_back/frame_3.png"
+dest_files=["res://.godot/imported/frame_3.png-9ca93277d1d794431953ad4153d3b829.ctex"]
 
 [params]
 

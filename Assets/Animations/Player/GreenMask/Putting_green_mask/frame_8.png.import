@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnjspqj8dbkyx"
-path="res://.godot/imported/frame_8.png-ac10764bb5803fffe1acb9bb6e933a5d.ctex"
+path="res://.godot/imported/frame_8.png-d98544e43167b2cd4266478e3602d452.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/GreenMask/Putting on a green mask/frame_8.png"
-dest_files=["res://.godot/imported/frame_8.png-ac10764bb5803fffe1acb9bb6e933a5d.ctex"]
+source_file="res://Assets/Animations/Player/GreenMask/Putting_green_mask/frame_8.png"
+dest_files=["res://.godot/imported/frame_8.png-d98544e43167b2cd4266478e3602d452.ctex"]
 
 [params]
 

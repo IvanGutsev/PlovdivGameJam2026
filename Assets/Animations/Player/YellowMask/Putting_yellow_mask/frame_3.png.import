@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gcih8xlh8qsp"
-path="res://.godot/imported/frame_3.png-8998a9651614fdb08446e09c8eaeb19b.ctex"
+path="res://.godot/imported/frame_3.png-3d3b81e9363b552fc9a6a5849ef758f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/YellowMask/Putting on a yellow mask /frame_3.png"
-dest_files=["res://.godot/imported/frame_3.png-8998a9651614fdb08446e09c8eaeb19b.ctex"]
+source_file="res://Assets/Animations/Player/YellowMask/Putting_yellow_mask/frame_3.png"
+dest_files=["res://.godot/imported/frame_3.png-3d3b81e9363b552fc9a6a5849ef758f9.ctex"]
 
 [params]
 

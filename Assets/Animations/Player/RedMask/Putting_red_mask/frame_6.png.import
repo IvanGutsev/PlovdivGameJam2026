@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gu5rafq7xrcj"
-path="res://.godot/imported/frame_6.png-68dc541dc1c70e275a9f6cec7e31c9df.ctex"
+path="res://.godot/imported/frame_6.png-00fcf263d5034e2419d37692c23e4cbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/RedMask/Putting on a red mask/frame_6.png"
-dest_files=["res://.godot/imported/frame_6.png-68dc541dc1c70e275a9f6cec7e31c9df.ctex"]
+source_file="res://Assets/Animations/Player/RedMask/Putting_red_mask/frame_6.png"
+dest_files=["res://.godot/imported/frame_6.png-00fcf263d5034e2419d37692c23e4cbe.ctex"]
 
 [params]
 

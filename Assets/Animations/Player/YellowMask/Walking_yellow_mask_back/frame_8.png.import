@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7rw82s42hj1h"
-path="res://.godot/imported/frame_8.png-edd71dcd1e0c48e1d8e49fa1ad48a0ad.ctex"
+path="res://.godot/imported/frame_8.png-a07456ac37e9ff15e3b389b56b0dfbf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/YellowMask/Walking yellow mask back/frame_8.png"
-dest_files=["res://.godot/imported/frame_8.png-edd71dcd1e0c48e1d8e49fa1ad48a0ad.ctex"]
+source_file="res://Assets/Animations/Player/YellowMask/Walking_yellow_mask_back/frame_8.png"
+dest_files=["res://.godot/imported/frame_8.png-a07456ac37e9ff15e3b389b56b0dfbf2.ctex"]
 
 [params]
 

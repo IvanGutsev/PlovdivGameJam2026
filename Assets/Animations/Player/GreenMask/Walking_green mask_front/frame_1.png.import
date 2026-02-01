@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0t6g8irwcsjr"
-path="res://.godot/imported/frame_1.png-efa2f7f0122aeccdb698b74c9217ac51.ctex"
+path="res://.godot/imported/frame_1.png-6bf9e713b9db9e25586c6deb339b027c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player/GreenMask/Walking green mask front/frame_1.png"
-dest_files=["res://.godot/imported/frame_1.png-efa2f7f0122aeccdb698b74c9217ac51.ctex"]
+source_file="res://Assets/Animations/Player/GreenMask/Walking_green mask_front/frame_1.png"
+dest_files=["res://.godot/imported/frame_1.png-6bf9e713b9db9e25586c6deb339b027c.ctex"]
 
 [params]
 
