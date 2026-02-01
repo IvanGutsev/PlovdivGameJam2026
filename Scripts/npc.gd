@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 #func _process(delta: float) -> void:
 
+
 func _process(delta: float) -> void:
 	if process:
 		if Input.is_action_just_pressed("interact"):
@@ -30,7 +31,6 @@ func _process(delta: float) -> void:
 				print("YOU SHALL NOT PASS!!!!");
 				$Barrier.disabled = false;
 				is_chatting = false;
-	
 
 func choose(array):
 	array.shuffle();
