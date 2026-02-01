@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 			#check whether the player can talk to the npc (does he have a mask?)
 			if Global.can_talk:
 				print("chatting with npc");
-				$"../Player/Camera2D/CanvasLayer/Control/VBoxContainer/DialogueBox".start();
 				is_chatting = true;
 				animated_sprite.play("idle");
 				$Barrier.disabled = true;

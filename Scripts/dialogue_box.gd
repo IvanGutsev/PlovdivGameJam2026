@@ -46,9 +46,6 @@ func next_script():
 		nine_patch_rect.visible = false;
 		emit_signal("dialogue_finished");
 		return;
-		
-	name_text.text = dialogue[current_dialogue_id]['name'];
-	dialogue_text.text = dialogue[current_dialogue_id]['text'];
 	
 	
 	

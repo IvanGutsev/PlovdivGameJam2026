@@ -53,8 +53,9 @@ func _physics_process(delta: float) -> void:
 		
 		
 	#Mask equip logic
-	if Input.is_action_pressed("mask"):
-		handle_mask_input()
+	if Input.is_action_just_pressed("mask"):
+		Global.can_talk = true;
+		#handle_mask_input()
 		print("mask equipped");
 	
 	##Manage state (masked and unmasked)
@@ -87,6 +88,7 @@ func handle_mask_input():
 	# If no mask is active, start the carousel at the first unlocked mask
 	if current_mask_index == -1:
 		activate_mask(0)
+		
 	else:
 		# Requirement 2 & 3: If we have multiple masks, cycle. If only one, refresh.
 		var next_index = (current_mask_index + 1) % unlocked_masks.size()
