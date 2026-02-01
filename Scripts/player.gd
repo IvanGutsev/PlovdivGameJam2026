@@ -54,8 +54,7 @@ func _physics_process(delta: float) -> void:
 		
 	#Mask equip logic
 	if Input.is_action_just_pressed("mask"):
-		Global.can_talk = true;
-		#handle_mask_input()
+		handle_mask_input()
 		print("mask equipped");
 	
 	##Manage state (masked and unmasked)
@@ -78,20 +77,22 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed * delta;
 	move_and_slide();
 
-func player():
-	pass;
-
 func handle_mask_input():
 	if unlocked_masks.is_empty():
 		return # Requirement 1: Do nothing if no masks are picked up
 
 	# If no mask is active, start the carousel at the first unlocked mask
 	if current_mask_index == -1:
+		print("Maskindex -1 executes")
 		activate_mask(0)
-		
-	else:
+	
+	if unlocked_masks.size() == 1:
+		activate_mask(0)
+		print("Maskindex 1 executes")
+	elif unlocked_masks.size() > 1:
 		# Requirement 2 & 3: If we have multiple masks, cycle. If only one, refresh.
 		var next_index = (current_mask_index + 1) % unlocked_masks.size()
+		print ("Switching mask index from ", current_mask_index, " to ", next_index)
 		activate_mask(next_index)
 
 func activate_mask(index: int):
@@ -126,5 +127,8 @@ func _on_mask_timer_timeout():
 # Logic to pick up masks (Call this from your Pickup Area2D)
 func collect_mask(id: int):
 	if not unlocked_masks.has(id):
+		print("Enters here")
+		current_mask_index = 0
 		unlocked_masks.append(id)
 		unlocked_masks.sort() # Keeps them in order: 1 then 2
+		print(unlocked_masks)
