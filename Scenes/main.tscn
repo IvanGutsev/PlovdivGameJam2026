@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://deoe4m4qlfopx" path="res://Scenes/level_1.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
-[ext_resource type="PackedScene" uid="uid://dv5yvhciupxu5" path="res://Scenes/mask.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://dj06fk3bvt8ot" path="res://Scenes/area_2d.gd" id="4_344ge"]
+[ext_resource type="Texture2D" uid="uid://dit7qdabu06c1" path="res://angry mask.PNG" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://xsnqquoiin7r" path="res://Scenes/dialog_area.tscn" id="7_6bp64"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_344ge"]
@@ -24,8 +25,19 @@ script = ExtResource("1_21xkr")
 position = Vector2(389, -420)
 scale = Vector2(0.25, 0.25)
 
-[node name="Mask" parent="." unique_id=1775335883 instance=ExtResource("4_jjvhh")]
-position = Vector2(698, -121)
+[node name="Mask2" type="Area2D" parent="." unique_id=1194985808]
+position = Vector2(698, -119)
+script = ExtResource("4_344ge")
+
+[node name="AngryMask" type="Sprite2D" parent="Mask2" unique_id=1297903053]
+position = Vector2(1, -1.0000021)
+scale = Vector2(0.04611384, 0.051072262)
+texture = ExtResource("4_ynf5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask2" unique_id=551378070]
+
+[node name="Timer" type="Timer" parent="Mask2" unique_id=448629036]
+wait_time = 5.0
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
 position = Vector2(802, 3)
@@ -69,7 +81,7 @@ dialog_key = "NPC3"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogAreaNPC3" unique_id=892307676]
 shape = SubResource("CircleShape2D_ynf5e")
 
-[connection signal="take_mask" from="Mask" to="Player" method="_on_mask_take_mask"]
+[connection signal="timeout" from="Mask2/Timer" to="." method="mask_timer"]
 
 [editable path="DialogAreaNPC1"]
 [editable path="DialogAreaNPC2"]
