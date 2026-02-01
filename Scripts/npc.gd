@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 #func _process(delta: float) -> void:
 
+
 func _process(delta: float) -> void:
 	if process:
 		if Input.is_action_just_pressed("interact"):
@@ -30,7 +31,6 @@ func _process(delta: float) -> void:
 				print("YOU SHALL NOT PASS!!!!");
 				$Barrier.disabled = false;
 				is_chatting = false;
-	
 
 func choose(array):
 	array.shuffle();
@@ -53,3 +53,5 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 
 func _on_dialogue_box_dialogue_finished() -> void:
 	is_chatting = false;
+	Global.currentDialogue += 1;
+	print(Global.currentDialogue);

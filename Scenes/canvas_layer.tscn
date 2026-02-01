@@ -7,6 +7,7 @@
 
 [node name="UntitledArtwork51" type="Sprite2D" parent="." unique_id=1071245153]
 position = Vector2(569, 365)
+position = Vector2(569, 361)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_q85f0")
 
