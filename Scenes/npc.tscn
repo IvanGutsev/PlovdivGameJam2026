@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://nqdnb6sw600a"]
 
-[ext_resource type="Texture2D" uid="uid://bf6iuh2keqwtg" path="res://Assets/knight.png" id="1_acqhf"]
 [ext_resource type="Script" uid="uid://cu2wfvr53s2q7" path="res://Scripts/npc.gd" id="1_xxsvc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
-atlas = ExtResource("1_acqhf")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://d250k7xfg05o8" path="res://Assets/Animations/NPC/Green/Walking green mask front/frame_1.png" id="2_xxsvc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b0k6i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xxsvc")
+"texture": ExtResource("2_xxsvc")
 }],
 "loop": true,
 "name": &"idle",
@@ -29,6 +25,7 @@ collision_mask = 2
 script = ExtResource("1_xxsvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=363414128]
+scale = Vector2(-0.045, 0.045)
 sprite_frames = SubResource("SpriteFrames_b0k6i")
 animation = &"idle"
 
@@ -50,6 +47,7 @@ shape = SubResource("CircleShape2D_xxsvc")
 
 [node name="Barrier" type="CollisionShape2D" parent="." unique_id=1354117006]
 position = Vector2(1, 2)
+scale = Vector2(0.79999846, 1)
 shape = SubResource("RectangleShape2D_xxsvc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
