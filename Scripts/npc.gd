@@ -53,3 +53,5 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 
 func _on_dialogue_box_dialogue_finished() -> void:
 	is_chatting = false;
+	Global.currentDialogue += 1;
+	print(Global.currentDialogue);
