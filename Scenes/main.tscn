@@ -4,12 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bngdwclfakgcw" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://deoe4m4qlfopx" path="res://Scenes/level_1.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://nqdnb6sw600a" path="res://Scenes/npc.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://cjencrpki2voc" path="res://Scenes/game_manager.gd" id="2_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://bsj8ueuo3quoh" path="res://Scenes/canvas_layer.tscn" id="4_21xkr"]
 [ext_resource type="Script" uid="uid://dj06fk3bvt8ot" path="res://Scenes/area_2d.gd" id="4_344ge"]
 [ext_resource type="Texture2D" uid="uid://dit7qdabu06c1" path="res://angry mask.PNG" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://xsnqquoiin7r" path="res://Scenes/dialog_area.tscn" id="7_6bp64"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_344ge"]
 radius = 59.135437
@@ -23,25 +22,25 @@ radius = 65.00769
 [node name="Main" type="Node2D" unique_id=158342298]
 script = ExtResource("1_21xkr")
 
+[node name="GameManager" type="Node" parent="." unique_id=1971234567]
+script = ExtResource("2_ynf5e")
+
 [node name="Level1" parent="." unique_id=187266163 instance=ExtResource("1_kry3j")]
 position = Vector2(389, -420)
 scale = Vector2(0.25, 0.25)
 
-[node name="Mask1" type="Area2D" parent="." unique_id=1194985808]
+[node name="Mask2" type="Area2D" parent="." unique_id=1194985808]
 position = Vector2(698, -119)
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("4_344ge")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask1" unique_id=551378070]
-shape = SubResource("RectangleShape2D_344ge")
-
-[node name="AngryMask" type="Sprite2D" parent="Mask1/CollisionShape2D" unique_id=1297903053]
-position = Vector2(-0.031230418, 0.6562524)
-scale = Vector2(0.046258762, 0.048109498)
+[node name="AngryMask" type="Sprite2D" parent="Mask2" unique_id=1297903053]
+position = Vector2(1, -1.0000021)
+scale = Vector2(0.04611384, 0.051072262)
 texture = ExtResource("4_ynf5e")
 
-[node name="MaskTimer" type="Timer" parent="Mask1" unique_id=448629036]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask2" unique_id=551378070]
+
+[node name="Timer" type="Timer" parent="Mask2" unique_id=448629036]
 wait_time = 5.0
 
 [node name="Player" parent="." unique_id=1397783346 instance=ExtResource("1_jjgbg")]
@@ -55,9 +54,6 @@ limit_right = 919
 limit_bottom = 128
 
 [node name="CanvasLayer" parent="Player/Camera2D" unique_id=184912528 instance=ExtResource("4_21xkr")]
-
-[node name="MaskTimer" type="Timer" parent="Player" unique_id=456697888]
-wait_time = 5.0
 
 [node name="NPC" parent="." unique_id=248751030 instance=ExtResource("2_bo1nx")]
 position = Vector2(690, -217)
@@ -89,29 +85,19 @@ dialog_key = "NPC3"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogAreaNPC3" unique_id=892307676]
 shape = SubResource("CircleShape2D_ynf5e")
 
-[node name="Mask2" type="Area2D" parent="." unique_id=1363327808]
-position = Vector2(646, -147)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("4_344ge")
-mask_id = 2
+[node name="Labels" type="Node" parent="." unique_id=1186221454]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask2" unique_id=1714321354]
-shape = SubResource("RectangleShape2D_344ge")
+[node name="NPC1" type="Label" parent="Labels" unique_id=68307488]
+visible = false
+offset_left = 710.0
+offset_top = -227.0
+offset_right = 891.0
+offset_bottom = -178.0
+scale = Vector2(0.5, 0.5)
+text = "WHO ARE YOU?!?!?
+YOU SHALL NOT PASS!!!"
 
-[node name="AngryMask" type="Sprite2D" parent="Mask2/CollisionShape2D" unique_id=1559985867]
-position = Vector2(-0.031230418, 0.6562524)
-scale = Vector2(0.046258762, 0.048109498)
-texture = ExtResource("4_ynf5e")
-
-[node name="MaskTimer" type="Timer" parent="Mask2" unique_id=1710820321]
-wait_time = 5.0
-
-[connection signal="body_entered" from="Mask1" to="Mask1" method="_on_body_entered"]
-[connection signal="timeout" from="Mask1/MaskTimer" to="Mask1" method="_on_mask_timer_timeout"]
-[connection signal="timeout" from="Player/MaskTimer" to="Player" method="_on_mask_timer_timeout"]
-[connection signal="body_entered" from="Mask2" to="Mask2" method="_on_body_entered"]
-[connection signal="timeout" from="Mask2/MaskTimer" to="Mask2" method="_on_mask_timer_timeout"]
+[connection signal="timeout" from="Mask2/Timer" to="." method="mask_timer"]
 
 [editable path="DialogAreaNPC1"]
 [editable path="DialogAreaNPC2"]
