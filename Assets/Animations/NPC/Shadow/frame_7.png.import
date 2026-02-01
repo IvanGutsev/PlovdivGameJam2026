@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://70ply7xhes3w"
-path="res://.godot/imported/frame_5.png-2447b2f4cf5481ff16a69aeb473aa159.ctex"
+uid="uid://bwg3vwkeb2qdv"
+path="res://.godot/imported/frame_7.png-a7f2c8dd66022f57ee3e1a90aad33416.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/NPC/Shadow /frame_5.png"
-dest_files=["res://.godot/imported/frame_5.png-2447b2f4cf5481ff16a69aeb473aa159.ctex"]
+source_file="res://Assets/Animations/NPC/Shadow/frame_7.png"
+dest_files=["res://.godot/imported/frame_7.png-a7f2c8dd66022f57ee3e1a90aad33416.ctex"]
 
 [params]
 
