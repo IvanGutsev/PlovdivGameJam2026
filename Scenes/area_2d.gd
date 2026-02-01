@@ -7,15 +7,20 @@ func _on_body_entered(body):
 	print("mask area entered")
 	# Check if the object entering the area is the Player
 	if body.has_method("collect_mask"):
+		print("mask collected")
 		body.collect_mask(mask_id)
+		print("mask_id is", mask_id)
 		# Optional: Play a sound or particle effect here
 		queue_free() # Remove the mask from the ground
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("It's alive")
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_mask_timer_timeout() -> void:
+	pass # Replace with function body.
